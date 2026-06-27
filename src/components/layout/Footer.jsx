@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -13,7 +14,9 @@ const Footer = () => {
   return (
     <footer className="site-footer shell">
       <div className="footer-brand">
-        <img src="/assets/pixelcore-logo.png" alt="PixelCore Tech logo" />
+        <Link to="/" aria-label="PixelCore Tech home">
+          <img src="/assets/pixelcore-logo.png" alt="PixelCore Tech logo" />
+        </Link>
         <p>Embedded Linux. Firmware. Full-stack. Android.</p>
         
         <div className="social-links">
@@ -30,13 +33,10 @@ const Footer = () => {
       </div>
       
       <nav aria-label="Footer navigation">
-        <a href="#services">Services</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#work">Projects</a>
-        <a href="#feedback">Testimonials</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <Link to="/services">Services</Link>
+        <Link to="/projects">Projects</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
       
       <div className="footer-right">

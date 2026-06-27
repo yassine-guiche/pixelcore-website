@@ -1,37 +1,28 @@
 import React from 'react';
-import Background from './components/layout/Background';
-import Header from './components/layout/Header';
-import ScrollProgress from './components/layout/ScrollProgress';
-import HeroSection from './components/sections/HeroSection';
-import ServicesSection from './components/sections/ServicesSection';
-import ExpertiseSection from './components/sections/ExpertiseSection';
-import SolutionsSection from './components/sections/SolutionsSection';
-import ProcessSection from './components/sections/ProcessSection';
-import WorkSection from './components/sections/WorkSection';
-import FeedbackSection from './components/sections/FeedbackSection';
-import AboutSection from './components/sections/AboutSection';
-import ContactSection from './components/sections/ContactSection';
-import Footer from './components/layout/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import Layout from './components/layout/Layout';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <>
-      <ScrollProgress />
-      <Background />
-      <Header />
-      <main style={{ position: 'relative', zIndex: 1 }}>
-        <HeroSection />
-        <ServicesSection />
-        <ExpertiseSection />
-        <SolutionsSection />
-        <ProcessSection />
-        <WorkSection />
-        <FeedbackSection />
-        <AboutSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    <HelmetProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="services" element={<Services />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 }
 
