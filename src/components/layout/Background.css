@@ -1,0 +1,86 @@
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(42, 143, 214, 0.08), transparent 34rem),
+    radial-gradient(circle at 86% 16%, rgba(95, 184, 106, 0.06), transparent 34rem),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+}
+
+.grid-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(var(--line-cyan) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-cyan) 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: radial-gradient(circle at 50% 22%, black, transparent 72%);
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.circuit {
+  position: absolute;
+  width: 480px;
+  height: 420px;
+  opacity: 0.14;
+  filter: drop-shadow(0 0 8px rgba(42, 143, 214, 0.3));
+}
+
+.circuit::before, .circuit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 10%, currentColor 10% 10.5%, transparent 10.5% 18%, currentColor 18% 18.5%, transparent 18.5% 32%, currentColor 32% 32.5%, transparent 32.5%),
+    linear-gradient(180deg, transparent 0 18%, currentColor 18% 18.5%, transparent 18.5% 38%, currentColor 38% 38.5%, transparent 38.5% 60%, currentColor 60% 60.5%, transparent 60.5%);
+  background-size: 180px 80px, 140px 120px;
+}
+
+.circuit-left {
+  color: var(--brand-cyan);
+  left: -150px;
+  bottom: 6%;
+}
+
+.circuit-right {
+  color: var(--brand-green);
+  right: -170px;
+  top: 28%;
+  transform: rotate(180deg);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  mix-blend-mode: color-dodge;
+  opacity: 0.45;
+  will-change: transform;
+}
+
+.orb-cyan {
+  width: 50vw;
+  height: 50vh;
+  left: -10vw;
+  top: -10vh;
+  background: var(--brand-cyan);
+}
+
+.orb-green {
+  width: 60vw;
+  height: 40vh;
+  right: -5vw;
+  bottom: -15vh;
+  background: var(--brand-green);
+}
+
+.orb-accent {
+  width: 45vw;
+  height: 45vh;
+  left: 25vw;
+  top: 30vh;
+  background: #2a3b5a; /* Deep blueish-purple blend */
+}

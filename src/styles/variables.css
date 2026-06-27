@@ -1,0 +1,47 @@
+:root {
+  /* Colors - Softer Premium Dark Theme */
+  --bg-primary: #0a0e14;
+  --bg-secondary: #111824;
+  --panel-bg: rgba(18, 28, 41, 0.45);
+  --panel-bg-hover: rgba(22, 34, 48, 0.6);
+  
+  --brand-cyan: #3b9bd4;
+  --brand-cyan-light: #70c1e8;
+  --brand-cyan-glow: rgba(59, 155, 212, 0.12);
+  
+  --brand-green: #68ba71;
+  --brand-green-light: #94cf9a;
+  --brand-green-glow: rgba(104, 186, 113, 0.1);
+  
+  --brand-accent: #f0a324; /* Warm gold for CTAs */
+
+  --text-primary: #e6ebf0;
+  --text-secondary: #a3b3c2;
+  --text-muted: #798899;
+
+  /* Borders & Lines */
+  --line-cyan: rgba(59, 155, 212, 0.12);
+  --line-green: rgba(104, 186, 113, 0.14);
+  --border-glass: rgba(255, 255, 255, 0.08);
+
+  /* Shadows */
+  --shadow-cyan: 0 0 28px rgba(42, 143, 214, 0.16);
+  --shadow-green: 0 0 28px rgba(95, 184, 106, 0.12);
+  --shadow-glass: 0 24px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 0 30px rgba(255,255,255,0.03);
+
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --container-max: 1440px;
+  --header-height: 80px;
+
+  /* Fonts */
+  --font-display: 'Space Grotesk', 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
