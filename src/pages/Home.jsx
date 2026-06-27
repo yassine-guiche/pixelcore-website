@@ -1,8 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/sections/HeroSection';
+import ServicesSection from '../components/sections/ServicesSection';
 import ExpertiseSection from '../components/sections/ExpertiseSection';
+import SolutionsSection from '../components/sections/SolutionsSection';
 import ProcessSection from '../components/sections/ProcessSection';
+import WorkSection from '../components/sections/WorkSection';
+import FeedbackSection from '../components/sections/FeedbackSection';
+import AboutSection from '../components/sections/AboutSection';
+import ContactSection from '../components/sections/ContactSection';
+import TechMarquee from '../components/sections/TechMarquee';
 
 const Home = () => {
   return (
@@ -13,8 +20,15 @@ const Home = () => {
       </Helmet>
       
       <HeroSection />
+      <ServicesSection />
       <ExpertiseSection />
+      <SolutionsSection />
       <ProcessSection />
+      <WorkSection />
+      <TechMarquee />
+      <FeedbackSection />
+      <AboutSection />
+      <ContactSection />
     </>
   );
 };

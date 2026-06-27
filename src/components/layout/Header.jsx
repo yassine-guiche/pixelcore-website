@@ -54,7 +54,10 @@ const Header = () => {
 
       <nav className={`site-nav ${isOpen ? 'open' : ''}`} aria-label="Main navigation">
         <Link to="/services" className={currentPath === '/services' ? 'active' : ''} aria-current={currentPath === '/services' ? 'page' : undefined} onClick={closeMenu}>Services</Link>
+        <Link to="/expertise" className={currentPath === '/expertise' ? 'active' : ''} aria-current={currentPath === '/expertise' ? 'page' : undefined} onClick={closeMenu}>Expertise</Link>
+        <Link to="/solutions" className={currentPath === '/solutions' ? 'active' : ''} aria-current={currentPath === '/solutions' ? 'page' : undefined} onClick={closeMenu}>Solutions</Link>
         <Link to="/projects" className={currentPath === '/projects' ? 'active' : ''} aria-current={currentPath === '/projects' ? 'page' : undefined} onClick={closeMenu}>Projects</Link>
+        <Link to="/testimonials" className={currentPath === '/testimonials' ? 'active' : ''} aria-current={currentPath === '/testimonials' ? 'page' : undefined} onClick={closeMenu}>Testimonials</Link>
         <Link to="/about" className={currentPath === '/about' ? 'active' : ''} aria-current={currentPath === '/about' ? 'page' : undefined} onClick={closeMenu}>About</Link>
         <Link className="nav-cta" to="/contact" onClick={closeMenu}>Start a Project</Link>
       </nav>
