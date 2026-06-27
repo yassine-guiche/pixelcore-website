@@ -14,7 +14,7 @@ const AboutSection = () => {
         transition={{ duration: 0.6 }}
       >
         <motion.img 
-          src="/assets/pixelcore-logo.png" 
+          src="/assets/pixelcore-logo.webp" 
           alt="PixelCore Tech logo" 
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}

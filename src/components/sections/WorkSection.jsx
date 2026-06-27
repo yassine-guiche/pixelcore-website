@@ -62,43 +62,43 @@ const WorkSection = () => {
       tag: "OpenWrt / Networking",
       title: "Custom OpenWrt firmware",
       description: "Custom OpenWrt firmware for networking device with package integration, VPN workflows, and system services.",
-      image: "/assets/networking_firmware.png"
+      image: "/assets/networking_firmware.webp"
     },
     {
       tag: "Yocto / BSP",
       title: "Yocto ARM Linux Image",
       description: "Yocto-based production image for ARM platform including layer integration, kernel settings, and rootfs optimization.",
-      image: "/assets/arm_linux_image.png"
+      image: "/assets/arm_linux_image.webp"
     },
     {
       tag: "Android",
       title: "Connected Mobile App",
       description: "Android application connected to backend APIs for hardware monitoring and operational tasks.",
-      image: "/assets/android_app.png"
+      image: "/assets/android_app.webp"
     },
     {
       tag: "Full-stack",
       title: "Admin Dashboard",
       description: "Admin dashboard for business operations, managing users, devices, and complex data models.",
-      image: "/assets/technical_dashboard.png"
+      image: "/assets/technical_dashboard.webp"
     },
     {
       tag: "Digital Marketing",
       title: "Marketing Landing Page",
       description: "High-conversion marketing landing page designed and deployed for a local service business.",
-      image: "/assets/digital_marketing.png"
+      image: "/assets/digital_marketing.webp"
     },
     {
       tag: "Brand Growth",
       title: "Social Media Campaigns",
       description: "Social media campaign support, promotional visuals, and copywriting for product and service launches.",
-      image: "/assets/brand_growth.png"
+      image: "/assets/brand_growth.webp"
     },
     {
       tag: "System Debugging",
       title: "Firmware Recovery",
       description: "Linux boot/debugging, firmware extraction, and recovery support for unresponsive industrial boards.",
-      image: "/assets/firmware_recovery.png"
+      image: "/assets/firmware_recovery.webp"
     }
   ];
 

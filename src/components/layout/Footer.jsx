@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className="site-footer shell">
       <div className="footer-brand">
         <Link to="/" aria-label="PixelCore Tech home">
-          <img src="/assets/pixelcore-logo.png" alt="PixelCore Tech logo" />
+          <img src="/assets/pixelcore-logo.webp" alt="PixelCore Tech logo" />
         </Link>
         <p>Embedded Linux. Firmware. Full-stack. Android.</p>
         

@@ -167,7 +167,7 @@ const HeroSection = () => {
           }}
           transition={{ type: 'spring', stiffness: 75, damping: 20 }}
         >
-          <img src="/assets/pixelcore-logo.png" alt="PixelCore IT Solutions logo" />
+          <img src="/assets/pixelcore-logo.webp" alt="PixelCore IT Solutions logo" />
         </motion.div>
 
         <motion.div 

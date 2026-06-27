@@ -81,7 +81,7 @@ const Header = () => {
       transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
     >
       <HashLink smooth className="brand" to="/#top" aria-label="PixelCore Tech home" onClick={closeMenu}>
-        <img src="/assets/pixelcore-logo.png" alt="PixelCore Tech logo" />
+        <img src="/assets/pixelcore-logo.webp" alt="PixelCore Tech logo" />
       </HashLink>
 
       <button 
