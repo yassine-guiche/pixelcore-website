@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import './Header.css';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const currentPath = location.pathname;
@@ -21,12 +23,38 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Only run scroll spy on the homepage
+      if (location.pathname === '/') {
+        const sections = document.querySelectorAll('section[id]');
+        let current = '';
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - 150) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        setActiveSection(current);
+      } else {
+        setActiveSection('');
+      }
+      
       setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Run it once on mount to catch initial position
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
+
+  // Helper to determine if a nav item is active
+  const isActive = (sectionId) => {
+    if (currentPath === '/') return activeSection === sectionId;
+    return currentPath === `/${sectionId}`; // Fallback if they are on the actual dedicated subpage
+  };
 
   return (
     <motion.header 
@@ -36,9 +64,9 @@ const Header = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
     >
-      <Link className="brand" to="/" aria-label="PixelCore Tech home" onClick={closeMenu}>
+      <HashLink smooth className="brand" to="/#top" aria-label="PixelCore Tech home" onClick={closeMenu}>
         <img src="/assets/pixelcore-logo.png" alt="PixelCore Tech logo" />
-      </Link>
+      </HashLink>
 
       <button 
         className="nav-toggle" 
@@ -53,13 +81,13 @@ const Header = () => {
       </button>
 
       <nav className={`site-nav ${isOpen ? 'open' : ''}`} aria-label="Main navigation">
-        <Link to="/services" className={currentPath === '/services' ? 'active' : ''} aria-current={currentPath === '/services' ? 'page' : undefined} onClick={closeMenu}>Services</Link>
-        <Link to="/expertise" className={currentPath === '/expertise' ? 'active' : ''} aria-current={currentPath === '/expertise' ? 'page' : undefined} onClick={closeMenu}>Expertise</Link>
-        <Link to="/solutions" className={currentPath === '/solutions' ? 'active' : ''} aria-current={currentPath === '/solutions' ? 'page' : undefined} onClick={closeMenu}>Solutions</Link>
-        <Link to="/projects" className={currentPath === '/projects' ? 'active' : ''} aria-current={currentPath === '/projects' ? 'page' : undefined} onClick={closeMenu}>Projects</Link>
-        <Link to="/testimonials" className={currentPath === '/testimonials' ? 'active' : ''} aria-current={currentPath === '/testimonials' ? 'page' : undefined} onClick={closeMenu}>Testimonials</Link>
-        <Link to="/about" className={currentPath === '/about' ? 'active' : ''} aria-current={currentPath === '/about' ? 'page' : undefined} onClick={closeMenu}>About</Link>
-        <Link className="nav-cta" to="/contact" onClick={closeMenu}>Start a Project</Link>
+        <HashLink smooth to="/#services" className={isActive('services') ? 'active' : ''} onClick={closeMenu}>Services</HashLink>
+        <HashLink smooth to="/#expertise" className={isActive('expertise') ? 'active' : ''} onClick={closeMenu}>Expertise</HashLink>
+        <HashLink smooth to="/#solutions" className={isActive('solutions') ? 'active' : ''} onClick={closeMenu}>Solutions</HashLink>
+        <HashLink smooth to="/#work" className={isActive('work') ? 'active' : ''} onClick={closeMenu}>Projects</HashLink>
+        <HashLink smooth to="/#feedback" className={isActive('feedback') ? 'active' : ''} onClick={closeMenu}>Testimonials</HashLink>
+        <HashLink smooth to="/#about" className={isActive('about') ? 'active' : ''} onClick={closeMenu}>About</HashLink>
+        <HashLink smooth className="nav-cta" to="/#contact" onClick={closeMenu}>Start a Project</HashLink>
       </nav>
     </motion.header>
   );
