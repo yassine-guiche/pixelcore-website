@@ -24,9 +24,6 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/pixelcore-it-solutions/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <FaLinkedin size={20} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">
-              <FaTwitter size={20} />
-            </a>
           </div>
         </div>
         
