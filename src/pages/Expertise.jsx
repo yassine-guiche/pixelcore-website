@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import ExpertiseSection from '../components/sections/ExpertiseSection';
+import StackSection from '../components/sections/StackSection';
 
 const Expertise = () => {
   return (
@@ -13,6 +14,7 @@ const Expertise = () => {
       <div style={{ paddingTop: '100px' }}>
         <ExpertiseSection />
       </div>
+      <StackSection />
     </>
   );
 };

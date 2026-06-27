@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/sections/HeroSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import ExpertiseSection from '../components/sections/ExpertiseSection';
+import StackSection from '../components/sections/StackSection';
 import SolutionsSection from '../components/sections/SolutionsSection';
 import ProcessSection from '../components/sections/ProcessSection';
 import WorkSection from '../components/sections/WorkSection';
@@ -22,6 +23,7 @@ const Home = () => {
       <HeroSection />
       <ServicesSection />
       <ExpertiseSection />
+      <StackSection />
       <SolutionsSection />
       <ProcessSection />
       <WorkSection />
