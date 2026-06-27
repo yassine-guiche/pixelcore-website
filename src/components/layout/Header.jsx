@@ -22,32 +22,48 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Only run scroll spy on the homepage
-      if (location.pathname === '/') {
-        const sections = document.querySelectorAll('section[id]');
-        let current = '';
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          if (window.scrollY >= sectionTop - 150) {
-            current = section.getAttribute('id');
-          }
-        });
-
-        setActiveSection(current);
-      } else {
-        setActiveSection('');
-      }
-      
-      setIsScrolled(window.scrollY > 50);
+    // 1. Scroll spy using IntersectionObserver (highly performant)
+    const sections = document.querySelectorAll('section[id]');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of viewport
+      threshold: 0
     };
 
-    window.addEventListener('scroll', handleScroll);
-    // Run it once on mount to catch initial position
-    handleScroll();
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && location.pathname === '/') {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach((section) => observer.observe(section));
+
+    // 2. Throttle the 'isScrolled' check for the header background
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
+    if (location.pathname !== '/') setActiveSection('');
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, [location.pathname]);
 
   // Helper to determine if a nav item is active

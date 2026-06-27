@@ -150,7 +150,10 @@
     rgba(3, 8, 13, 0.72);
   border: 1px solid rgba(92, 196, 238, 0.22);
   box-shadow: 0 0 0 1px rgba(95, 184, 106, 0.06), 0 0 36px rgba(42, 143, 214, 0.12), inset 0 0 24px rgba(42, 143, 214, 0.05);
-  backdrop-filter: blur(22px);
+  background: rgba(3, 0, 20, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateZ(0);
 }
 
 .logo-hologram::before {
